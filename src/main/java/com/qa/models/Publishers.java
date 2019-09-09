@@ -18,9 +18,11 @@ public class Publishers {
     //Date yearEstablished;
 
     public Publishers() {
+        super();
     }
 
     public Publishers(String publisherName, String currentCEO) {
+        super();
         this.publisherName = publisherName;
         this.currentCEO = currentCEO;
     }
@@ -50,7 +52,7 @@ public class Publishers {
     }
 
     public void setPublisher(Publishers publisher){
-        this.publisherName = publisherName;
-        this.currentCEO = currentCEO;
+        this.publisherName = publisher.publisherName;
+        this.currentCEO = publisher.currentCEO;
     }
 }

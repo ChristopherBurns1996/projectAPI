@@ -12,7 +12,6 @@ import java.util.List;
 @CrossOrigin()
 public class GamesController {
 
-
     @Autowired
     private GamesRepository repository;
 
@@ -30,7 +29,6 @@ public class GamesController {
     @RequestMapping(value = "games/{gameid}", method = RequestMethod.PUT)
     public Games updateGame(@RequestBody Games game, @PathVariable Long gameid){
         Games existing = repository.findOne(gameid);
-        //existing.setGameName(game.getGameName());
         existing.setGame(game);
         return existing;
     }
