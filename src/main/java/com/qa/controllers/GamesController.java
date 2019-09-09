@@ -10,6 +10,8 @@ import java.util.List;
 @RestController
 @CrossOrigin()
 public class GamesController {
+
+
     @Autowired
     private GamesRepository repository;
 
