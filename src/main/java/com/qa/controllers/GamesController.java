@@ -25,7 +25,7 @@ public class GamesController {
         return repository.saveAndFlush(game);
     }
 
-    @RequestMapping(value = "games", method = RequestMethod.PUT)
+    @RequestMapping(value = "games/{gameid}", method = RequestMethod.PUT)
     public Games updateGame(@RequestBody Games game, @PathVariable Long gameid){
         Games existing = repository.findOne(gameid);
         existing = game;
