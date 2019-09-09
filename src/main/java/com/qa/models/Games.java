@@ -17,6 +17,17 @@ public class Games {
     String platform;
     //Date yearOfRelease;
 
+    public Games() {
+        super();
+    }
+
+    public Games(String gameName, String publisher, String platform) {
+        super();
+        this.gameName = gameName;
+        this.publisher = publisher;
+        this.platform = platform;
+    }
+
     public Long getGameid() {
         return gameid;
     }
@@ -49,7 +60,13 @@ public class Games {
         this.platform = platform;
     }
 
-//    public Date getYearOfRelease() {
+    public void setGame(Games game) {
+        this.gameName = game.gameName;
+        this.publisher = game.publisher;
+        this.platform = game.platform;
+    }
+
+    //    public Date getYearOfRelease() {
 //        return yearOfRelease;
 //    }
 //

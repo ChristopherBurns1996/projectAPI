@@ -3,6 +3,7 @@ package com.qa.controllers;
 import com.qa.models.Games;
 import com.qa.repository.GamesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,10 +26,12 @@ public class GamesController {
         return repository.saveAndFlush(game);
     }
 
+    @Transactional
     @RequestMapping(value = "games/{gameid}", method = RequestMethod.PUT)
     public Games updateGame(@RequestBody Games game, @PathVariable Long gameid){
         Games existing = repository.findOne(gameid);
-        existing = game;
+        //existing.setGameName(game.getGameName());
+        existing.setGame(game);
         return existing;
     }
 
