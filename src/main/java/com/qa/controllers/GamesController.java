@@ -21,12 +21,19 @@ public class GamesController {
     }
 
     @RequestMapping(value = "games", method = RequestMethod.POST)
-    public Games addNote(@RequestBody Games game){
+    public Games addGame(@RequestBody Games game){
         return repository.saveAndFlush(game);
     }
 
+    @RequestMapping(value = "games", method = RequestMethod.PUT)
+    public Games updateGame(@RequestBody Games game, @PathVariable Long gameid){
+        Games existing = repository.findOne(gameid);
+        existing = game;
+        return existing;
+    }
+
     @RequestMapping(value = "games/{gameid}", method = RequestMethod.DELETE)
-    public Games deleteNote(@PathVariable Long gameid){
+    public Games deleteGame(@PathVariable Long gameid){
         Games existing = repository.findOne(gameid);
         repository.delete(existing);
         return existing;
