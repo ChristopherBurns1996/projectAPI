@@ -24,4 +24,12 @@ public class GamesController {
     public Games addNote(@RequestBody Games game){
         return repository.saveAndFlush(game);
     }
+
+    @RequestMapping(value = "games/{gameid}", method = RequestMethod.DELETE)
+    public Games deleteNote(@PathVariable Long gameid){
+        Games existing = repository.findOne(gameid);
+        repository.delete(existing);
+        return existing;
+    }
+
 }
