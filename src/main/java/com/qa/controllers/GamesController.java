@@ -20,7 +20,7 @@ public class GamesController {
         return repository.findAll();
     }
 
-    @RequestMapping(value = "notes", method = RequestMethod.POST)
+    @RequestMapping(value = "games", method = RequestMethod.POST)
     public Games addNote(@RequestBody Games game){
         return repository.saveAndFlush(game);
     }
