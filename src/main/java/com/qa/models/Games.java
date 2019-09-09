@@ -15,7 +15,7 @@ public class Games {
     String gameName;
     String publisher;
     String platform;
-    Date yearOfRelease;
+    //Date yearOfRelease;
 
     public Long getGameid() {
         return gameid;
@@ -49,11 +49,11 @@ public class Games {
         this.platform = platform;
     }
 
-    public Date getYearOfRelease() {
-        return yearOfRelease;
-    }
-
-    public void setYearOfRelease(Date yearOfRelease) {
-        this.yearOfRelease = yearOfRelease;
-    }
+//    public Date getYearOfRelease() {
+//        return yearOfRelease;
+//    }
+//
+//    public void setYearOfRelease(Date yearOfRelease) {
+//        this.yearOfRelease = yearOfRelease;
+//    }
 }
