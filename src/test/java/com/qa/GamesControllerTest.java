@@ -51,4 +51,20 @@ public class GamesControllerTest {
 
         assertEquals(gamesController.listAllGames().get(0).getGameName(), "Halo 3");
     }
+
+    @Test
+    public void addGameTest(){
+        List<Games> gamesList = new ArrayList<>();
+        Games game = new Games();
+        game.setGameid(0l);
+        game.setGameName("Halo 3");
+        game.setPublisher("Bungie");
+        game.setPlatform("Xbox 360");
+        game.setYearOfRelease(2007);
+        gamesList.add(game);
+
+        when(repository.saveAndFlush(game)).thenReturn(game);
+
+        assertEquals(gamesController.addGame(game).getPublisher(), "Bungie");
+    }
 }
