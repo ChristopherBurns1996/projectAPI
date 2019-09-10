@@ -15,25 +15,25 @@ public class GamesController {
     @Autowired
     private GamesRepository repository;
 
-    @RequestMapping(value = "games", method = RequestMethod.GET)
+    @RequestMapping(value = "Games", method = RequestMethod.GET)
     public List<Games> listAllGames(){
         return repository.findAll();
     }
 
-    @RequestMapping(value = "games", method = RequestMethod.POST)
+    @RequestMapping(value = "Games", method = RequestMethod.POST)
     public Games addGame(@RequestBody Games game){
         return repository.saveAndFlush(game);
     }
 
     @Transactional
-    @RequestMapping(value = "games/{gameid}", method = RequestMethod.PUT)
+    @RequestMapping(value = "Games/{gameid}", method = RequestMethod.PUT)
     public Games updateGame(@RequestBody Games game, @PathVariable Long gameid){
         Games existing = repository.findOne(gameid);
         existing.setGame(game);
         return existing;
     }
 
-    @RequestMapping(value = "games/{gameid}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "Games/{gameid}", method = RequestMethod.DELETE)
     public Games deleteGame(@PathVariable Long gameid){
         Games existing = repository.findOne(gameid);
         repository.delete(existing);
