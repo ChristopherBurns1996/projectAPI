@@ -66,5 +66,17 @@ public class GamesControllerTest {
         assertEquals(gamesController.addGame(game).getPublisher(), "Bungie");
     }
 
+    @Test
+    public void updateGameTest(){
+        Games game = new Games();
+        game.setGameid(0l);
+        game.setGameName("Halo 3");
+        game.setPublisher("Bungie");
+        game.setPlatform("Xbox 360");
+        game.setYearOfRelease(2007);
 
+        when(repository.findOne(0l)).thenReturn(game);
+
+        assertEquals(gamesController.deleteGame(0l).getPlatform(), "Xbox 360");
+    }
 }
