@@ -77,6 +77,6 @@ public class GamesControllerTest {
 
         when(repository.findOne(0l)).thenReturn(game);
 
-        assertEquals(gamesController.deleteGame(0l).getPlatform(), "Xbox 360");
+        assertEquals(gamesController.updateGame(game, 0l).getPlatform(), "Xbox 360");
     }
 }
