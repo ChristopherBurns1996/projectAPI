@@ -1,7 +1,6 @@
 package com.qa.models;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "Games")
@@ -13,17 +12,19 @@ public class Games {
     private String gameName;
     private String publisher;
     private String platform;
-    //Date yearOfRelease;
+    private int yearOfRelease;
+
 
     public Games() {
         super();
     }
 
-    public Games(String gameName, String publisher, String platform) {
+    public Games(String gameName, String publisher, String platform, int yearOfRelease) {
         super();
         this.gameName = gameName;
         this.publisher = publisher;
         this.platform = platform;
+        this.yearOfRelease = yearOfRelease;
     }
 
     public Long getGameid() {
@@ -58,17 +59,19 @@ public class Games {
         this.platform = platform;
     }
 
+    public int getYearOfRelease() {
+        return yearOfRelease;
+    }
+
+    public void setYearOfRelease(int yearOfRelease) {
+        this.yearOfRelease = yearOfRelease;
+    }
+
     public void setGame(Games game) {
+
         this.gameName = game.gameName;
         this.publisher = game.publisher;
         this.platform = game.platform;
+        this.yearOfRelease = game.yearOfRelease;
     }
-
-    //    public Date getYearOfRelease() {
-//        return yearOfRelease;
-//    }
-//
-//    public void setYearOfRelease(Date yearOfRelease) {
-//        this.yearOfRelease = yearOfRelease;
-//    }
 }

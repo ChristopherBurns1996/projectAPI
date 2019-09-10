@@ -13,16 +13,17 @@ public class Publishers {
     private Long publisherid;
     private String publisherName;
     private String currentCEO;
-    //Date yearEstablished;
+    private int yearEstablished;
 
     public Publishers() {
         super();
     }
 
-    public Publishers(String publisherName, String currentCEO) {
+    public Publishers(String publisherName, String currentCEO, int yearEstablished) {
         super();
         this.publisherName = publisherName;
         this.currentCEO = currentCEO;
+        this.yearEstablished = yearEstablished;
     }
 
     public Long getPublisherid() {
@@ -49,8 +50,17 @@ public class Publishers {
         this.currentCEO = currentCEO;
     }
 
+    public int getYearEstablished() {
+        return yearEstablished;
+    }
+
+    public void setYearEstablished(int yearEstablished) {
+        this.yearEstablished = yearEstablished;
+    }
+
     public void setPublisher(Publishers publisher){
         this.publisherName = publisher.publisherName;
         this.currentCEO = publisher.currentCEO;
+        this.yearEstablished = publisher.yearEstablished;
     }
 }
