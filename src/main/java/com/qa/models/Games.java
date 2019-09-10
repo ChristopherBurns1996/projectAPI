@@ -27,10 +27,6 @@ public class Games {
         this.yearOfRelease = yearOfRelease;
     }
 
-    public Long getGameid() {
-        return gameid;
-    }
-
     public void setGameid(Long gameid) {
         this.gameid = gameid;
     }

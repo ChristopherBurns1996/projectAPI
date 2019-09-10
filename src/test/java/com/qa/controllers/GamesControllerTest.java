@@ -1,6 +1,5 @@
-package com.qa;
+package com.qa.controllers;
 
-import com.qa.controllers.GamesController;
 import com.qa.models.Games;
 import com.qa.repository.GamesRepository;
 import org.junit.Test;
@@ -16,7 +15,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
@@ -82,12 +80,7 @@ public class GamesControllerTest {
 
     @Test
     public void deleteGameTest(){
-        Games game = new Games();
-        game.setGameid(0l);
-        game.setGameName("Halo 3");
-        game.setPublisher("Bungie");
-        game.setPlatform("Xbox 360");
-        game.setYearOfRelease(2007);
+        Games game = new Games("Halo 3","Bungie","Xbox 360",2007);
 
         when(repository.findOne(0l)).thenReturn(game);
 
