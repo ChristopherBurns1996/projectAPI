@@ -10,9 +10,9 @@ public class Publishers {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long publisherid;
-    String publisherName;
-    String currentCEO;
+    private Long publisherid;
+    private String publisherName;
+    private String currentCEO;
     //Date yearEstablished;
 
     public Publishers() {

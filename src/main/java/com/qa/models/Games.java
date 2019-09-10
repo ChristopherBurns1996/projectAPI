@@ -9,10 +9,10 @@ public class Games {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long gameid;
-    String gameName;
-    String publisher;
-    String platform;
+    private Long gameid;
+    private String gameName;
+    private String publisher;
+    private String platform;
     //Date yearOfRelease;
 
     public Games() {
