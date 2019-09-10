@@ -37,7 +37,18 @@ public class GamesControllerTest {
     private TestRestTemplate restTemplate;
 
     @Test
-    public void testAddGames(){
+    public void listAllGamesTest(){
+        List<Games> gamesList = new ArrayList<>();
+        Games game = new Games();
+        game.setGameid(0l);
+        game.setGameName("Halo 3");
+        game.setPublisher("Bungie");
+        game.setPlatform("Xbox 360");
+        game.setYearOfRelease(2007);
+        gamesList.add(game);
 
+        when(repository.findAll()).thenReturn(gamesList);
+
+        assertEquals(gamesController.listAllGames().get(0).getGameName(), "Halo 3");
     }
 }
