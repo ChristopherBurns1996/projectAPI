@@ -5,12 +5,10 @@ import org.junit.Test;
 public class AppTest
 {
 
-    private App app;
-
     @Test
     public void shouldAnswerWithTrue()
     {
-        app = new App();
+        App app = new App();
         app.main(new String[]{});
     }
 }
