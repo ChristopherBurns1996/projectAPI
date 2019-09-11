@@ -27,14 +27,14 @@ public class PublishersController {
 
     @Transactional
     @RequestMapping(value = "publishers/{publisherid}", method = RequestMethod.PUT)
-    public Publishers updatePublishers(@RequestBody Publishers publisher, @PathVariable Long publisherid){
+    public Publishers updatePublisher(@RequestBody Publishers publisher, @PathVariable Long publisherid){
         Publishers existing = repository.findOne(publisherid);
         existing.setPublisher(publisher);
         return existing;
     }
 
     @RequestMapping(value = "publishers/{publisherid}", method = RequestMethod.DELETE)
-    public Publishers deletePublishers(@PathVariable Long publisherid){
+    public Publishers deletePublisher(@PathVariable Long publisherid){
         Publishers existing = repository.findOne(publisherid);
         repository.delete(existing);
         return existing;
