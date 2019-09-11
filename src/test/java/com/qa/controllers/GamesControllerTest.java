@@ -28,12 +28,6 @@ public class GamesControllerTest {
     @Mock
     private GamesRepository repository;
 
-    @LocalServerPort
-    private int port;
-
-    @Autowired
-    private TestRestTemplate restTemplate;
-
     @Test
     public void listAllGamesTest(){
         List<Games> gamesList = new ArrayList<>();

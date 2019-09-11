@@ -5,7 +5,7 @@ import org.junit.Test;
 public class AppTest
 {
 
-    App app;
+    private App app;
 
     @Test
     public void shouldAnswerWithTrue()

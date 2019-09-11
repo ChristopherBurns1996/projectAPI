@@ -28,12 +28,6 @@ public class PublishersControllerTest {
     @Mock
     private PublishersRepository repository;
 
-    @LocalServerPort
-    private int port;
-
-    @Autowired
-    private TestRestTemplate restTemplate;
-
     @Test
     public void listAllPublishersTest(){
         List<Publishers> publishersList = new ArrayList<>();
@@ -73,5 +67,14 @@ public class PublishersControllerTest {
         when(repository.findOne(0l)).thenReturn(publisher);
 
         assertEquals(publishersController.updatePublisher(publisher, 0l).getYearEstablished(), 2000);
+    }
+
+    @Test
+    public void deletePublisherTest(){
+        Publishers publisher = new Publishers("Bungie","IDK",2000);
+
+        when(repository.findOne(0l)).thenReturn(publisher);
+
+        assertEquals(publishersController.deletePublisher(0l).getYearEstablished(), 2000);
     }
 }
