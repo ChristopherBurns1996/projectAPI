@@ -49,4 +49,17 @@ public class PublishersControllerTest {
         assertEquals(publishersController.listAllPublishers().get(0).getPublisherName(), "Bungie");
     }
 
+    @Test
+    public void addPublisherTest(){
+        Publishers publisher = new Publishers();
+        publisher.setPublisherid(0l);
+        publisher.setPublisherName("Bungie");
+        publisher.setCurrentCEO("IDK");
+        publisher.setYearEstablished(2000);
+
+        when(repository.saveAndFlush(publisher)).thenReturn(publisher);
+
+        assertEquals(publishersController.addPublisher(publisher).getCurrentCEO(), "IDK");
+    }
+
 }
