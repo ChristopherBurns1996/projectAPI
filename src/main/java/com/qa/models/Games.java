@@ -21,6 +21,7 @@ public class Games {
 
     public Games(String gameName, String publisher, String platform, int yearOfRelease) {
         super();
+        this.gameid = gameid;
         this.gameName = gameName;
         this.publisher = publisher;
         this.platform = platform;
