@@ -25,6 +25,10 @@ public class Publishers {
         this.yearEstablished = yearEstablished;
     }
 
+    public Long getPublisherid(){
+        return publisherid;
+    }
+
     public void setPublisherid(Long publisherid) {
         this.publisherid = publisherid;
     }
