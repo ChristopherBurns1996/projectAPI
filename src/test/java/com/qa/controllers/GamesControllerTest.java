@@ -65,6 +65,7 @@ public class GamesControllerTest {
         game.setYearOfRelease(2007);
 
         when(repository.findOne(0l)).thenReturn(game);
+        game.getGameid();
 
         assertEquals(gamesController.updateGame(game, 0l).getPlatform(), "Xbox 360");
     }

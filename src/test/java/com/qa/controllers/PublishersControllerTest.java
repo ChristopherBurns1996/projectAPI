@@ -71,6 +71,7 @@ public class PublishersControllerTest {
         Publishers publisher = new Publishers("Bungie","IDK",2000);
 
         when(repository.findOne(0l)).thenReturn(publisher);
+        publisher.getPublisherid();
 
         assertEquals(publishersController.deletePublisher(0l).getYearEstablished(), 2000);
     }
