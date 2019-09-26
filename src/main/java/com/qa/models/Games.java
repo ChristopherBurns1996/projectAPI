@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "games")
 public class Games {
-
+    //Creates the fields for the Games table
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long gameid;
@@ -14,11 +14,12 @@ public class Games {
     private String platform;
     private int yearOfRelease;
 
-
+    //An empty constructor for spring
     public Games() {
         super();
     }
 
+    //An overloaded constructor that I can use to create Game objects
     public Games(String gameName, String publisher, String platform, int yearOfRelease) {
         super();
         this.gameid = gameid;
@@ -28,6 +29,7 @@ public class Games {
         this.yearOfRelease = yearOfRelease;
     }
 
+    //Getters and setters
     public Long getGameid(){
         return gameid;
     }
@@ -68,6 +70,7 @@ public class Games {
         this.yearOfRelease = yearOfRelease;
     }
 
+    //Method to set the values of a game apart from the id
     public void setGame(Games game) {
 
         this.gameName = game.gameName;
